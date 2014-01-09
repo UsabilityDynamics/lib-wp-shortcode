@@ -9,10 +9,11 @@
  *
  * @version 0.1.0
  * @package UsabilityDynamics
+ * @subpackage Shortcode
  */
-namespace UsabilityDynamics {
+namespace UsabilityDynamics\Shortcode {
 
-  if( !class_exists( 'UsabilityDynamics\Shortcode' ) ) {
+  if( !class_exists( 'UsabilityDynamics\Shortcode\Shortcode' ) ) {
 
     class Shortcode {
     

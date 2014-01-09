@@ -14,7 +14,8 @@
   "homepage": "http://github.com/UsabilityDynamics/lib-wp-shortcode",
   "autoload": {
     "files": [
-      "lib/shortcode.php"
+      "lib/class-shortcode.php",
+      "lib/class-ui.php"
     ]
   },
   "extra": {
