@@ -13,10 +13,7 @@
   "minimum-stability": "dev",
   "homepage": "http://github.com/UsabilityDynamics/lib-wp-shortcode",
   "autoload": {
-    "files": [
-      "lib/class-shortcode.php",
-      "lib/class-ui.php"
-    ]
+    "classmap": [ "lib" ]
   },
   "extra": {
     "component": {
