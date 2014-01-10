@@ -13,18 +13,14 @@
  */
 namespace UsabilityDynamics\Shortcode {
 
-  if( !class_exists( 'UsabilityDynamics\Shortcode\UI' ) ) {
+  if( !class_exists( 'UsabilityDynamics\Shortcode\Bootstrap' ) ) {
 
-    class UI {
-    
-      /**
-       * Constructor.
-       *
-       */
-      public function __construct( $options = array() ) {
+    class Bootstrap {
 
+      static public function initialize() {
+        
       }
-
+    
     }
 
   }

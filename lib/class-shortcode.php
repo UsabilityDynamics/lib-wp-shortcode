@@ -23,7 +23,7 @@ namespace UsabilityDynamics\Shortcode {
        *
        * @value string
        */
-      var $id = '';
+      public $id = '';
     
       /**
        * Shortcode params.
@@ -32,7 +32,7 @@ namespace UsabilityDynamics\Shortcode {
        *
        * @value array
        */
-      var $params = array();
+      public $params = array();
       
       /**
        * Shortcode description
@@ -40,7 +40,7 @@ namespace UsabilityDynamics\Shortcode {
        *
        * @value string
        */
-      var $description = '';
+      public $description = '';
       
       /**
        * Group
@@ -48,9 +48,17 @@ namespace UsabilityDynamics\Shortcode {
        * default is 'Default'.
        * Can be set in constructor.
        *
-       * @value string
+       * @value array
        */
-      var $group = 'default';
+      public $group = array( 
+        'id' => 'default' ,
+        'name' => 'Default',
+      );
+      
+      /**
+       *
+       */
+      private $errors = array();
       
       /**
        * Constructor.
@@ -58,17 +66,19 @@ namespace UsabilityDynamics\Shortcode {
        *
        */
       public function __construct( $options = array() ) {
-        global $_shortcodes;
-      
-        if( !is_array( $_shortcodes ) ) {
-          $_shortcodes = array();
-        }
         
         // Set properties
         if( is_array( $options ) ) {
           foreach( $options as $k => $v ) {
             if( in_array( $k, array( 'id', 'params', 'description', 'group' ) ) ) {
-              $this->{$k} = $v;
+              if( $k == 'group' ) {
+                $this->group = array( 
+                  'id' => sanitize_key( $v ),
+                  'name' => $v,
+                );
+              } else {
+                $this->{$k} = $v;
+              }
             }
           }
         }
@@ -78,21 +88,13 @@ namespace UsabilityDynamics\Shortcode {
             $this->params[ $k ] = $this->_param_sync( $k, $val );
           }
         }
+        
         // Add current shortcode to global variable
-        $group = sanitize_key( $this->group );
-        if( !isset( $_shortcodes[ $group ] ) || !is_array( $_shortcodes[ $group ] ) ) {
-          $_shortcodes[ $group ] = array( 
-            'name' => $this->group,
-            'properties' => array(),
-          );
+        $r = Manager::add( $this );
+        if( is_wp_error( $r ) ) {
+          $this->errors[] = $r;
         }
-        $this->group = $group;
-        array_push( $_shortcodes[ $group ][ 'properties' ], $this );
-        
-        // Now, we add shortcode to WP
-        add_shortcode( $this->id, array( $this, 'call' ) );
-        
-        return $this;
+
       }
       
       /**
@@ -118,6 +120,20 @@ namespace UsabilityDynamics\Shortcode {
           'default' => '', // default value description
         ) );
         return $v;
+      }
+      
+      /**
+       * Determine if there are errors
+       */
+      public function has_error() {
+        return !empty( $this->errors ) ? true : false;
+      }
+      
+      /**
+       * Returns the list of errors
+       */
+      public function get_errors() {
+        return $this->errors;
       }
 
     }
