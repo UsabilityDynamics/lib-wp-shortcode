@@ -50,7 +50,7 @@ namespace UsabilityDynamics\Shortcode {
        *
        * @value string
        */
-      var $group = 'Default';
+      var $group = 'default';
       
       /**
        * Constructor.
