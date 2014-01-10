@@ -109,12 +109,12 @@ namespace UsabilityDynamics\Shortcode {
        */
       private function _param_sync( $k, $v ) {
         $v = wp_parse_args( $v, array(
-          'key' => $k,
+          'id' => $k,
           'name' => '',
           'description' => '',
           'is_multiple' => false,
           'type' => 'string', // boolean, string, number
-          'values' => array(),
+          'enum' => array(),
           'default' => '', // default value description
         ) );
         return $v;

@@ -2,12 +2,12 @@
   "name": "usabilitydynamics/lib-wp-shortcode",
   "type": "library",
   "version": "0.1.0",
-  "description": "Improves Shortcode implemetation in Wordpress and adds Shortcode UI",
+  "description": "Improves Shortcode implementation in Wordpress and adds Shortcode UI",
   "require": {},
   "repositories": [
     {
       "type": "composer",
-      "url": "http://udx.io"
+      "url": "http://repository.usabilitydynamics.com/"
     }
   ],
   "minimum-stability": "dev",
