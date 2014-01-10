@@ -34,8 +34,8 @@ namespace UsabilityDynamics\Shortcode {
         $shortcodes = array();
       
         $options = wp_parse_args( $options, array(
-          'group' = false,
-          'grouped' = false,
+          'group' => false,
+          'grouped' => false,
         ) );
         
         if( !empty( $options[ 'group' ] ) ) {
@@ -48,7 +48,7 @@ namespace UsabilityDynamics\Shortcode {
         } else {
           if ( $options[ 'grouped' ] ) {
             foreach( self::$shortcodes as $k => $v ) {
-              if( !isset( $shortcodes[ $v->group[ 'id' ] ] ) || !is_array( $shortcodes[ $v->group[ 'id' ] ) ) {
+              if( !isset( $shortcodes[ $v->group[ 'id' ] ] ) || !is_array( $shortcodes[ $v->group[ 'id' ] ] ) ) {
                 $shortcodes[ $v->group[ 'id' ] ] = array(
                   'name' => $v->group[ 'name' ],
                   'properties' => array(),
@@ -76,8 +76,8 @@ namespace UsabilityDynamics\Shortcode {
         // Determine if passed param is valid
         try {
           //@TODO: check if class or base class of object is Shortcode.
-          if( !is_object( $shortcode ) {
-            throw new Exception( __( 'Param is not an object or doesn\'t extend UsabilityDynamics\Shortcode\Shortcode class' ) );
+          if( !is_object( $shortcode ) ) {
+            throw new Exception( __( 'Param is not an object or doesn\'t extend UsabilityDynamics\\Shortcode\\Shortcode class' ) );
           }
           if ( key_exists( $shortcode->id, self::$shortcodes ) ) {
             throw new Exception( __( 'Shortcode is already added. It can not be added twice.' ) );
