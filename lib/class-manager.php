@@ -65,6 +65,28 @@ namespace UsabilityDynamics\Shortcode {
       }
       
       /**
+       * Returns shortcode's object by passed property ( key )
+       *
+       * @param string $property.
+       * @param string $value.
+       * @param boolean $single. Returns the list of objects or single object
+       * @return mixed Array or Object
+       * @author peshkov@UD
+       */
+      static public function get_by( $property, $value, $single = true ) {
+        $_shortcodes = array();
+        foreach( self::$shortcodes as $k => $v ) {
+          if( isset( $v->{$property} ) && $v->{$property} == $value ) {
+            array_push( $_shortcodes, $v );
+            if( $single ) {
+              break;
+            }
+          }
+        }
+        return $single ? ( !empty( $_shortcodes[0] ) ? $_shortcodes[0] : null ) : $_shortcodes;
+      }
+      
+      /**
        * Adds shortcode object to shortcodes list.
        *
        * @param UsabilityDynamics\Shortcode\Shortcode $shortcode
