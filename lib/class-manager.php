@@ -20,7 +20,7 @@ namespace UsabilityDynamics\Shortcode {
        * @type array
        * @author peshkov@UD
        */
-      private static $shortcodes;
+      private static $shortcodes = array();
     
       /**
        * Get array of available shortcodes objects.
