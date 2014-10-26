@@ -1,7 +1,6 @@
 {
   "name": "usabilitydynamics/lib-wp-shortcode",
   "type": "library",
-  "version": "0.1.0",
   "description": "Improves Shortcode implementation in Wordpress and adds Shortcode UI",
   "require": {},
   "repositories": [
