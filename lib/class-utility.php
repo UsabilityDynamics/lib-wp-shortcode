@@ -80,7 +80,7 @@ namespace UsabilityDynamics\Shortcode {
        * @return string
        * @since 0.1.2
        */
-      public function prepare_args( $instance ) {
+      static public function prepare_args( $instance ) {
         $args = array();
         if ( !empty( $instance ) && is_array( $instance ) ) {
           foreach( $instance as $name => $value ) {
