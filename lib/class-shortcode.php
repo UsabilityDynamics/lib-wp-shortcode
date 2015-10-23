@@ -70,7 +70,7 @@ namespace UsabilityDynamics\Shortcode {
         // Set properties
         if( is_array( $options ) ) {
           foreach( $options as $k => $v ) {
-            if( in_array( $k, array( 'id', 'params', 'description', 'group' ) ) ) {
+            if( in_array( $k, array( 'id', 'description', 'group' ) ) ) {
               if( $k == 'group' ) {
                 $this->group = array( 
                   'id' => sanitize_key( $v ),
@@ -82,6 +82,9 @@ namespace UsabilityDynamics\Shortcode {
             }
           }
         }
+
+        $this->params = apply_filters( "shortcode_{$this->id}_params", !empty( $options[ 'params' ] ) ? $options[ 'params' ] : array() );
+
         // All params must have the same structure
         if( is_array( $this->params ) ) {
           foreach( $this->params as $k => $val ) {
