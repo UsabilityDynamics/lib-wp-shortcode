@@ -1,8 +1,8 @@
 {
-  "name": "usabilitydynamics/lib-wp-shortcode",
-  "version": "0.1.0",
+  "name": "udx/lib-wp-shortcode",
+  "version": "0.2.0",
   "description": "Improves Shortcode implemetation in Wordpres and adds Shortcode UI",
-  "homepage": "http://github.com/UsabilityDynamics/lib-wp-shortcode",
+  "homepage": "https://github.com/udx/lib-wp-shortcode",
   "dependencies": {},
   "scripts": [
     "./scripts"

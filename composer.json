@@ -1,5 +1,5 @@
 {
-  "name": "usabilitydynamics/lib-wp-shortcode",
+  "name": "udx/lib-wp-shortcode",
   "type": "library",
   "description": "Improves Shortcode implementation in Wordpress and adds Shortcode UI",
   "require": {},
@@ -10,16 +10,16 @@
     }
   ],
   "minimum-stability": "dev",
-  "homepage": "http://github.com/UsabilityDynamics/lib-wp-shortcode",
+  "homepage": "https://github.com/udx/lib-wp-shortcode",
   "autoload": {
     "classmap": [ "lib" ]
   },
   "extra": {
     "component": {
-      "name": "usabilitydynamics/lib-wp-shortcode",
+      "name": "udx/lib-wp-shortcode",
       "version": "0.1.0",
       "description": "Improves Shortcode implemetation in Wordpres and adds Shortcode UI",
-      "homepage": "http://github.com/UsabilityDynamics/lib-wp-shortcode",
+      "homepage": "https://github.com/udx/lib-wp-shortcode",
       "dependencies": {},
       "scripts": [
         "./scripts"
@@ -37,7 +37,7 @@
     }
   },
   "support": {
-    "issues": "http://github.com/UsabilityDynamics/lib-wp-shortcode/issues"
+    "issues": "https://github.com/udx/lib-wp-shortcode/issues"
   },
   "license": "MIT"
 }
